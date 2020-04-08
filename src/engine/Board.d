@@ -119,7 +119,6 @@ class Board {
 			if (move[0] == move[2] &&
 				(move[1] + m == move[3] || move[1] + md == move[3]) &&
 				board[move[3]][move[2]].getP == '.') {
-				writeln("fok");
 				flag = 1;
 			} else {
 				//could be taking enemy piece;
