@@ -9,7 +9,7 @@ release: $(OBJS)
 
 clean:
 	rm -f *.o
-	rm -f chess
+	rm -f Chess
 
 chess:
 	dmd ./src/Chess.d ./src/Piece.d ./src/Board.d
