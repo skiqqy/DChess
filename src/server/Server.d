@@ -3,7 +3,8 @@ module server.Server;
 import std.socket;
 import core.thread;
 import std.conv;
-import server.Player;
+import server.NetworkPlayer;
+import Player;
 
 class Server
 {
@@ -15,8 +16,8 @@ class Server
     public void start()
     {
         /* Get two connections */
-        players[0] = new Player(serverSocket.accept());
-        players[1] = new Player(serverSocket.accept());
+        players[0] = new NetworkPlayer(serverSocket.accept(), Color.WHITE);
+        players[1] = new NetworkPlayer(serverSocket.accept(), Color.BLACK);
     }
 
     this(char[] address, ushort port)
@@ -24,7 +25,7 @@ class Server
         /* Setup the Socket */
         serverSocket = new Socket(AddressFamily.INET, SocketType.STREAM, ProtocolType.TCP);
         serverSocket.bind(parseAddress(cast(string)(address~to!(char[])(port))));
-        serverSocket.listen();
+        serverSocket.listen(2);
     }
     
 
