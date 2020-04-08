@@ -13,7 +13,7 @@ import server.NetworkGame;
 import LocalGame;
 import core.stdc.signal;
 
-extern(C) void bruh(int) nothrow @nogc @system;
+extern(C) void oof(int) nothrow @nogc @system;
 
 public void test()
 {
@@ -29,7 +29,7 @@ void main()
 	bool isNetworked = false;
 
 	/* Set SIGINT handler */
-	signal(SIGINT, &bruh);
+	signal(SIGINT, &oof);
 	
 
 	if(isNetworked)

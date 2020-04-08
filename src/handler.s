@@ -1,8 +1,12 @@
 .global bruh
+.global _start
+.global main
 .extern test
+.extern oof
 
 .text
 
+main:
 bruh:
 
     #
@@ -35,6 +39,7 @@ bruh:
 
     int $0x80
 
+    
 
     # Exit
     movl $2, %ebx

@@ -1,11 +1,8 @@
 #include<stdio.h>
 
-int main()
-{
-    
-}
-
-void bruh(int i)
+void oof(int i)
 {
     printf("Hello\n");
+    
+
 }

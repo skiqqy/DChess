@@ -12,6 +12,7 @@ clean:
 	rm -f Chess
 
 chess:
-	as ./src/handler.s
-	mv a.out bruh.o
-	dmd ./src/Chess.d ./src/engine/Piece.d ./src/engine/Board.d ./src/engine/Player.d ./src/LocalPlayer.d ./src/server/Server.d ./src/server/NetworkPlayer.d ./src/server/NetworkGame.d ./src/engine/Game.d ./src/LocalGame.d bruh.o
+
+	
+	gcc ./src/handler.c -shared -fPIC -o hand.o
+	dmd ./src/Chess.d ./src/engine/Piece.d ./src/engine/Board.d ./src/engine/Player.d ./src/LocalPlayer.d ./src/server/Server.d ./src/server/NetworkPlayer.d ./src/server/NetworkGame.d ./src/engine/Game.d ./src/LocalGame.d hand.o
