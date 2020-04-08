@@ -12,4 +12,4 @@ clean:
 	rm -f Chess
 
 chess:
-	dmd ./src/Chess.d ./src/Piece.d ./src/Board.d
+	dmd ./src/Chess.d ./src/Piece.d ./src/Board.d ./src/Player.d

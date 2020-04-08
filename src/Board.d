@@ -1,3 +1,5 @@
+module Board;
+
 import std.stdio;
 import std.conv;
 import std.string : split;
@@ -47,6 +49,10 @@ class Board {
 		}
 	}
 
+	/* Takes in an array (static of size 4) and treats
+	* it as dynamically (no resizes so aliasing works)
+	* and then gets the moves.
+	*/
 	void translate_move(string move_s, int[] move_i) {
 		byte k = 0;
 		foreach (string move; split(move_s, ""))
