@@ -4,8 +4,8 @@ import std.string : split;
 import Piece;
 
 class Board {
-	Piece[8][8] board;
-	int curr_player;
+	private Piece[8][8] board;
+	private int curr_player;
 
 	this() {
 		//init of the board
