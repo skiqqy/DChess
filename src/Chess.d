@@ -12,16 +12,16 @@ void main() {
 	
 
 	/* For a local game */
-	playGame(new LocalPlayer(Color.BLACK), new LocalPlayer(Color.WHITE));
+	playGame([new LocalPlayer(Color.BLACK), new LocalPlayer(Color.WHITE)]);
 
 	
 }
 
-void playGame(Player player1, Player player2)
+void playGame(Player[] players)
 {
 	string move;
 	Board game = new Board();
-	Player currentPlayer = player1;
+	Player currentPlayer = players[0];
 
 	while (true) {
 			write(game);
@@ -30,13 +30,18 @@ void playGame(Player player1, Player player2)
 			game.make_move(move);
 			writeln("\n###########\n");
 			
-			if(currentPlayer == player1)
-			{
-				currentPlayer = player2;
-			}
-			else
-			{
-				currentPlayer = player1;
-			}
+			
 		}
+}
+
+void switchPlayer(ref Player currentPlayer, Player[] players)
+{
+	if(currentPlayer == players[0])
+	{
+		currentPlayer = players[1];
+	}
+	else
+	{
+		currentPlayer = players[0];
+	}
 }
