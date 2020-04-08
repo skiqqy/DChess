@@ -32,9 +32,10 @@ void main()
 		/* Networked game */
 
 		/* Create a new NetworkGame object to represent the network version of the game */
-		game = new NetworkGame(cast(char[])"127.0.0.1", 6969, [new NetworkPlayer(null, Color.BLACK), new NetworkPlayer(null, Color.WHITE)]);
+		game = new NetworkGame("127.0.0.1", 6969);
 		
 		
+
 	}
 	else
 	{

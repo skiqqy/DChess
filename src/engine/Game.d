@@ -15,25 +15,33 @@ import engine.Game;
 public class Game
 {
     /* The players of the game */
-    private Player[] players;
+    protected Player[] players;
 
     this(Player[] players)
     {
         this.players = players;
     }
 
+    this()
+    {
+
+    }
+
+    abstract void pregameInit();
+
     public void setPlayers(Player[] players)
     {
         this.players = players;
     }
 
+    /* Plays the game */
     void playGame()
     {
-string move;
-	Board game = new Board();
-	Player currentPlayer = players[0];
+        string move;
+	    Board game = new Board();
+	    Player currentPlayer = players[0];
 
-	while (true) {
+	    while (true) {
 			write(game);
 			askMove:
 				write("Enter Move: ");
