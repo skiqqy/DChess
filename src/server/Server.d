@@ -6,9 +6,10 @@ import std.conv;
 import server.NetworkPlayer;
 import engine.Player;
 
-class Server
+public class Server
 {
 
+    /* The server socket */
     private Socket serverSocket = null;
 
     private Player[] players;
@@ -16,8 +17,11 @@ class Server
     public void start()
     {
         /* Get two connections */
+        writeln("Waiting for player 1...");
         players[0] = new NetworkPlayer(serverSocket.accept(), Color.WHITE);
+        writeln("Waiting for player 2...");
         players[1] = new NetworkPlayer(serverSocket.accept(), Color.BLACK);
+        writeln("All players arrived");
     }
 
     this(char[] address, ushort port)
