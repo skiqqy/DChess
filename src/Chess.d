@@ -7,7 +7,7 @@ void main() {
 	string move;
 	Board game = new Board();
 
-	while (1) {
+	while (true) {
 		write(game.toString);
 		write("Enter Move: ");
 		move = strip(stdin.readln());
