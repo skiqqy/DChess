@@ -25,11 +25,22 @@ void playGame(Player[] players)
 
 	while (true) {
 			write(game);
-			write("Enter Move: ");
-			move = currentPlayer.getNextMove();
-			game.make_move(move);
+			askMove:
+				write("Enter Move: ");
+				move = currentPlayer.getNextMove();
+				
+				/* Make the move and check if it is valid */
+				bool moveResult = game.make_move(move);
+
+			/* If the move is invalid, prompt for it again */
+			if(!moveResult)
+			{
+				goto askMove;
+			}
+
 			writeln("\n###########\n");
 			
+			/* Switch players */
 			switchPlayer(currentPlayer, players);
 		}
 }
