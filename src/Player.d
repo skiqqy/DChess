@@ -1,14 +1,16 @@
 module Player;
 
-/* Represents a Player */
-public class Player
-{
-    /* The color of the player */
+/* The color of the player */
     enum Color
     {
         WHITE,
         BLACK
     }
+
+/* Represents a Player */
+public class Player
+{
+    
 
     /* The player's color */
     private Color playerColor;
@@ -19,6 +21,5 @@ public class Player
         this.playerColor = color;
     }
 
-
-
+    abstract string getNextMove();
 }

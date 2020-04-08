@@ -5,26 +5,38 @@ import std.conv;
 import std.string;
 import Board;
 // import server.Server;
+import LocalPlayer;
+import Player;
 
 void main() {
+	
+
+	/* For a local game */
+	playGame(new LocalPlayer(Color.BLACK), new LocalPlayer(Color.WHITE));
+
+	
+}
+
+void playGame(Player player1, Player player2)
+{
 	string move;
 	Board game = new Board();
+	Player currentPlayer = player1;
 
-	bool isServer = false;
-
-	if (isServer)
-	{
-		// Server gameServer = new Server(cast(char[])"", 6969);
-	}
-	else
-	{
-		while (true) {
+	while (true) {
 			write(game);
 			write("Enter Move: ");
-			move = strip(stdin.readln());
+			move = currentPlayer.getNextMove();
 			game.make_move(move);
 			writeln("\n###########\n");
+			
+			if(currentPlayer == player1)
+			{
+				currentPlayer = player2;
+			}
+			else
+			{
+				currentPlayer = player1;
+			}
 		}
-	}
-	
 }
