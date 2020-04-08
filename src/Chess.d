@@ -29,13 +29,8 @@ void main()
 
 	if(isNetworked)
 	{
-		/* Networked game */
-
 		/* Create a new NetworkGame object to represent the network version of the game */
 		game = new NetworkGame("127.0.0.1", 6969);
-		
-		
-
 	}
 	else
 	{
@@ -43,6 +38,9 @@ void main()
 		game = new LocalGame([new LocalPlayer(Color.BLACK), new LocalPlayer(Color.WHITE)]);
 	}
 	
+	/* Initialize the gme */
+	game.pregameInit();
+
+	/* Start the game */
 	game.playGame();
-	
 }
