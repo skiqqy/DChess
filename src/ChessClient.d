@@ -20,4 +20,9 @@ void main()
 
     Socket socket = new Socket(AddressFamily.INET, SocketType.STREAM, ProtocolType.TCP);
     socket.connect(parseAddress(address, portNumber));
+
+    while(1)
+    {
+        
+    }
 }
