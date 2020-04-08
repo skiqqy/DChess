@@ -11,7 +11,9 @@ void main() {
 		write(game);
 		write("Enter Move: ");
 		move = strip(stdin.readln());
-		game.make_move(move);
+		if (!game.make_move(move)) {
+			writeln("Invalid move!");
+		}
 		writeln("\n###########\n");
 	}
 }

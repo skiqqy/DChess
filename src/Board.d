@@ -54,16 +54,36 @@ class Board {
 		foreach (string move; bruh)
 		{
 			move_i[k] =  to!(int)(to!(char)(move));
+			if (k % 2 == 0) {
+				move_i[k] -= 65;
+			} else {
+				move_i[k] -= 49;
+				move_i[k] = 7 - move_i[k];
+			}
 			k++;
 		}
 	}
 
-	void make_move(string move_s) {
+	int make_move(string move_s) {
 		//make the move;
 		int[4] move;
+		int flag;
+		Piece p;
 		translate_move(move_s, move);
-		writeln(move);
-		this.curr_player = get_opp();
+		flag = legal_move(move);
+
+		if (flag) {
+			this.curr_player = get_opp();
+			board[move[3]][move[2]] = board[move[1]][move[0]];
+			board[move[1]][move[0]] = new Piece('.', 2);
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	int legal_move(int[] move) {
+		return board[move[1]][move[0]].check_move(move);
 	}
 
 	override string toString() {
