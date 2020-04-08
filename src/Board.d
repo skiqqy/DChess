@@ -1,5 +1,6 @@
 import std.stdio;
 import std.conv;
+import std.string : split;
 import Piece;
 
 class Board {
@@ -46,9 +47,23 @@ class Board {
 		}
 	}
 
-	void make_move(string move) {
-		//make the move;
+	void translate_move(string move_s, int[] move_i) {
+		char[] move_c = to!(char[])(split(move_s, ""));
+		int i;
+		char[] c_off = ['A','B','C','D','E','F','G','H'];
+		writeln(move_c);
 
+		move_i[0] = to!(int)(move_c[0]);//xi
+		move_i[1] = to!(int)(move_c[1]);//yi
+		move_i[2] = to!(int)(move_c[2]);//xf
+		move_i[3] = to!(int)(move_c[3]);//yf
+	}
+
+	void make_move(string move_s) {
+		//make the move;
+		int[4] move;
+		translate_move(move_s, move);
+		writeln(move);
 		this.curr_player = get_opp();
 	}
 
