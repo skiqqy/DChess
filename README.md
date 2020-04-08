@@ -11,7 +11,7 @@ To run
 ./Chess
 ````
 
-##TL;DR
+## TL;DR
 ````
 $ make clean all && ./Chess
 ````
