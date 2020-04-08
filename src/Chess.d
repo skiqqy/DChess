@@ -30,7 +30,7 @@ void playGame(Player[] players)
 			game.make_move(move);
 			writeln("\n###########\n");
 			
-			
+			switchPlayer(currentPlayer, players);
 		}
 }
 
