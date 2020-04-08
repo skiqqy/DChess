@@ -24,7 +24,7 @@ public class Game
 
     this() {}
 
-    abstract void pregameInit();
+    abstract void preGameInit();
 
     /* Plays the game */
     void playGame()
@@ -54,6 +54,8 @@ public class Game
 			switchPlayer(currentPlayer, players);
 		}
     }
+
+    abstract void postGameCleanUp();
 
     private void switchPlayer(ref Player currentPlayer, Player[] players)
     {

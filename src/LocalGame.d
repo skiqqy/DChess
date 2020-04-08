@@ -11,7 +11,12 @@ public class LocalGame : Game
         super(players);
     }
 
-    override void pregameInit()
+    override void preGameInit()
+    {
+        writeln("TODO: Nothing");
+    }
+
+    override void postGameCleanUp()
     {
         writeln("TODO: Nothing");
     }

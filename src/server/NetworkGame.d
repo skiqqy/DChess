@@ -27,7 +27,7 @@ public class NetworkGame : Game
         serverSocket.listen(2);
     }
 
-    override void pregameInit()
+    override void preGameInit()
     {
         /* Setup `players` */
         players = new Player[2];
@@ -38,6 +38,13 @@ public class NetworkGame : Game
         writeln("Waiting for player 2...");
         players[1] = new NetworkPlayer(serverSocket.accept(), Color.BLACK);
         writeln("All players arrived");
+    }
+
+    override void postGameCleanUp()
+    {
+        writeln("TODO: Nothing");
+        /* TODO: Close up */
+        serverSocket.close();
     }
 
 

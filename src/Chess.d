@@ -38,8 +38,11 @@ void main()
 	}
 	
 	/* Initialize the gme */
-	game.pregameInit();
+	game.preGameInit();
 
 	/* Start the game */
 	game.playGame();
+
+	/* Clean up the game */
+	game.postGameCleanUp();
 }
