@@ -48,10 +48,8 @@ class Board {
 	}
 
 	void translate_move(string move_s, int[] move_i) {
-		string[] bruh = split(move_s, "");
-
 		byte k = 0;
-		foreach (string move; bruh)
+		foreach (string move; split(move_s, ""))
 		{
 			move_i[k] =  to!(int)(to!(char)(move));
 			k++;
