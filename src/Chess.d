@@ -20,7 +20,7 @@ void main()
 	/* The game to be played */
 	Game game;
 
-	bool isNetworked = false;
+	bool isNetworked = true;
 
 	/* Set SIGINT handler */
 	signal(SIGINT, &signalHandler);

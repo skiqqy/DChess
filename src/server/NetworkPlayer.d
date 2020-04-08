@@ -2,6 +2,7 @@ module server.NetworkPlayer;
 
 import engine.Player;
 import std.socket;
+import std.stdio;
 
 public class NetworkPlayer : Player
 {
@@ -10,13 +11,17 @@ public class NetworkPlayer : Player
     this(Socket clientConnection, Color color)
     {
         super(color);
+        this.clientConnection = clientConnection;
     }
 
     override string getNextMove()
     {
+        writeln("Getting next move, blocked....");
         /* Protocol is 1 byte (size), then string of that length */
         byte[1] sizeBuffer;
+        writeln("d");
         clientConnection.receive(sizeBuffer, SocketFlags.PEEK);
+        writeln("fdjkhfdkjhfjdk");
 
         /* Read sizeBuffer many bytes */
         byte[] moveBuffer;

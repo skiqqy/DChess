@@ -23,7 +23,7 @@ public class NetworkGame : Game
         /* Setup the Socket */
         serverSocket = new Socket(AddressFamily.INET, SocketType.STREAM, ProtocolType.TCP);
         // serverSocket.bind(parseAddress(cast(string)(address~ cast(char[])to!(char[])(port))));
-        serverSocket.bind(parseAddress(address~to!(string)(port)));
+        serverSocket.bind(parseAddress(address, port));
         serverSocket.listen(2);
     }
 

@@ -18,3 +18,6 @@ chess:
 	echo "Compiled and linked shared library-loader code"
 	rm Chess.o
 	echo "Cleaned"
+
+chessClient:
+	dmd ./src/ChessClient.d
