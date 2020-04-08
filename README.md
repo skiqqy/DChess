@@ -12,11 +12,10 @@ make clean all
 To run:
 
 ````
-export LD_LIBRARY_PATH="$(pwd)"
-./Chess
+./PlayChess.sh
 ````
 
 ## TL;DR
 ````
-$ make clean all && ./Chess
+$ make clean all && ./PlayChess.sh
 ````
