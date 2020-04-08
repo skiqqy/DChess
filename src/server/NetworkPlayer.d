@@ -1,6 +1,6 @@
 module server.NetworkPlayer;
 
-import Player;
+import engine.Player;
 import std.socket;
 
 public class NetworkPlayer : Player

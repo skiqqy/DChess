@@ -1,4 +1,4 @@
-module Player;
+module engine.Player;
 
 /* The color of the player */
     enum Color

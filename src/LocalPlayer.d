@@ -1,6 +1,6 @@
 module LocalPlayer;
 
-import Player;
+import engine.Player;
 import std.stdio : stdin;
 import std.string : strip;
 

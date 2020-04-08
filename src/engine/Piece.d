@@ -1,7 +1,9 @@
+module engine.Piece;
+
 import std.stdio;
 import std.conv;
 import std.ascii;
-import Player : Color;
+import engine.Player : Color;
 
 class Piece {
 	char piece;

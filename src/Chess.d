@@ -3,15 +3,22 @@ module Chess;
 import std.stdio;
 import std.conv;
 import std.string;
-import Board;
 // import server.Server;
 import LocalPlayer;
 import server.NetworkPlayer;
 import server.Server;
-import Player;
+import engine.Player;
 import engine.Game;
 import server.NetworkGame;
 import LocalGame;
+import core.stdc.signal;
+
+extern(C) void bruh(int) nothrow @nogc @system;
+
+public void test()
+{
+	writeln("Bitch");
+}
 
 void main()
 {
@@ -21,7 +28,9 @@ void main()
 
 	bool isNetworked = false;
 
-
+	/* Set SIGINT handler */
+	signal(SIGINT, &bruh);
+	
 
 	if(isNetworked)
 	{
@@ -38,10 +47,3 @@ void main()
 	game.playGame();
 	
 }
-
-void playGame(Player[] players)
-{
-	
-}
-
-

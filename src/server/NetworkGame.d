@@ -2,7 +2,7 @@ module server.NetworkGame;
 
 import engine.Game;
 import server.NetworkPlayer;
-import Player;
+import engine.Player;
 
 public class NetworkGame : Game
 {

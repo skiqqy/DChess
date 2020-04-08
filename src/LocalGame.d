@@ -1,7 +1,7 @@
 module LocalGame;
 
 import engine.Game;
-import Player;
+import engine.Player;
 
 public class LocalGame : Game
 {

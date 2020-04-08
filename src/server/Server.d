@@ -4,7 +4,7 @@ import std.socket;
 import core.thread;
 import std.conv;
 import server.NetworkPlayer;
-import Player;
+import engine.Player;
 
 class Server
 {

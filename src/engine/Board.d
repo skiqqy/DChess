@@ -1,10 +1,10 @@
-module Board;
+module engine.Board;
 
 import std.stdio;
 import std.conv;
 import std.string : split;
-import Piece;
-import Player : Color;
+import engine.Piece;
+import engine.Player : Color;
 
 class Board {
 	private Piece[8][8] board;

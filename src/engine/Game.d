@@ -3,12 +3,12 @@ module engine.Game;
 import std.stdio;
 import std.conv;
 import std.string;
-import Board;
+import engine.Board;
 // import server.Server;
 import LocalPlayer;
 import server.NetworkPlayer;
 import server.Server;
-import Player;
+import engine.Player;
 import engine.Game;
 
 
