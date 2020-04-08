@@ -24,6 +24,6 @@ public class NetworkPlayer : Player
         clientConnection.receive(moveBuffer);
         moveBuffer = moveBuffer[1..moveBuffer.length];
 
-        return cast(string)cast(char[])moveBuffer;
+        return cast(string)moveBuffer;
     }
 }
