@@ -17,7 +17,6 @@ extern(C) void signalHandler(int) nothrow @nogc @system;
 
 void main()
 {
-
 	/* The game to be played */
 	Game game;
 
