@@ -7,7 +7,7 @@ class Board {
 
 	this() {
 		//init of the board
-		int i;
+		int i, j;
 		char[8] ps = ['c', 'h', 'b', 'q', 'k', 'b', 'h', 'c'];
 
 		for (i = 0; i < 8; i++) {
