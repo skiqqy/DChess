@@ -22,17 +22,9 @@ public class Game
         this.players = players;
     }
 
-    this()
-    {
-
-    }
+    this() {}
 
     abstract void pregameInit();
-
-    public void setPlayers(Player[] players)
-    {
-        this.players = players;
-    }
 
     /* Plays the game */
     void playGame()
