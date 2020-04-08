@@ -44,11 +44,27 @@ class Piece {
 				(move[1] + m == move[3] || move[1] + md == move[3])) {
 				flag = 1;
 			} else {
+				//could be taking enemy piece
+				/*
+				int lt = -1, rt = 1;
+				if ((move[0] + lt == move[2] || move[0] + rt == move[2]) &&
+					 move[1] + m == move[3] &&)
+				*/
 				flag = 0;
 			}
 		}
 
 		return flag;
+	}
+
+	int is_enemy(int color) {
+		if (this.color == 2) {
+			return 0;
+		} else if (this.color != color) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 	override string toString() {

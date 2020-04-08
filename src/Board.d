@@ -88,13 +88,53 @@ class Board {
 	}
 
 	int legal_move(int[] move) {
+		int flag = 1;
+		Piece p;
 		if (move[0] > 7 || move[0] < 0 || move[1] > 7 || move[1] < 0 ||
 			move[2] > 7 || move[2] < 0 || move[3] > 7 || move[3] < 0) {
 			return 0;//move is out  of  bounds
 		} else if (board[move[1]][move[0]].getP == '.') {
 			return 0;//move is selecting an empy block
 		}
-		return board[move[1]][move[0]].check_move(move);
+		
+		p = board[move[1]][move[0]];
+
+		//////////////////////////////////////////
+		if (p.getP == 'p') {
+			int m, md;
+			if (p.getPC) {
+				m = 1;//bp
+				md = 1;
+				if (move[1] == 1) {
+					md = 2;
+				}
+			} else {
+				m = -1;
+				md = -1;
+				if (move[1] == 6) {
+					md = -2;
+				}
+			}
+
+			if (move[0] == move[2] &&
+				(move[1] + m == move[3] || move[1] + md == move[3]) &&
+				board[move[3]][move[2]].getP == '.') {
+				writeln("fok");
+				flag = 1;
+			} else {
+				//could be taking enemy piece;
+				int lt = -1, rt = 1;
+				if ((move[0] + lt == move[2] || move[0] + rt == move[2]) &&
+					 move[1] + m == move[3] &&
+					 board[move[3]][move[2]].is_enemy(p.getPC)) {
+					flag = 1;
+				} else {
+					flag = 0;
+				}
+			}
+		}
+		//////////////////////////////////////////
+		return flag;
 	}
 
 	override string toString() {
