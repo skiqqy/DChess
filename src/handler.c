@@ -1,8 +1,12 @@
 #include<stdio.h>
+#include<dlfcn.h>
 
-void oof(int i)
+void signalHandler(int signalNumber)
 {
-    printf("Hello\n");
-    
-
+    /* Handle SIGINT */
+    if (signalNumber == 2)
+    {
+        printf("Exiting nicely, and by that I mean just `exit(0)`\n");
+        exit(0);
+    }
 }
