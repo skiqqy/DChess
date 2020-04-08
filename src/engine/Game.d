@@ -22,6 +22,11 @@ public class Game
         this.players = players;
     }
 
+    public void setPlayers(Player[] players)
+    {
+        this.players = players;
+    }
+
     void playGame()
     {
 string move;
