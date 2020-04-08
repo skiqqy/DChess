@@ -13,7 +13,7 @@ class Piece {
 
 	override string toString() {
 		string c;
-		if (color == 1) {
+		if (color == 1 || color == 2) {
 			return to!(string)(this.piece);
 		} else {
 			return to!(string)(toUpper(this.piece));
