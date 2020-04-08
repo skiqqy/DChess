@@ -98,9 +98,17 @@ class Board {
 		}
 		
 		p = board[move[1]][move[0]];
-
 		//////////////////////////////////////////
 		if (p.getP == 'p') {
+			flag = check_pawn(move, p);
+		}
+		//////////////////////////////////////////
+		return flag;
+	}
+
+	int check_pawn(int[] move, Piece p) {
+		int flag = 1;
+
 			int m, md;
 			if (p.getPC) {
 				m = 1;//bp
@@ -131,8 +139,7 @@ class Board {
 					flag = 0;
 				}
 			}
-		}
-		//////////////////////////////////////////
+
 		return flag;
 	}
 
