@@ -1,7 +1,7 @@
 DChess
 ======
 
-Chess written in D
+Chess written in D with a sprinkle of C.
 
 To compile:
 
