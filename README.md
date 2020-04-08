@@ -1,4 +1,4 @@
-# Dhess
+# DChess
 Chess written in D
 
 To Complile:
