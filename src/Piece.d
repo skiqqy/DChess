@@ -1,12 +1,13 @@
 import std.stdio;
 import std.conv;
 import std.ascii;
+import Player : Color;
 
 class Piece {
 	char piece;
-	int color;
+	private Color color;
 	
-	this(char piece, int color) {
+	this(char piece, Color color) {
 		this.piece = piece;
 		this.color = color;
 	}

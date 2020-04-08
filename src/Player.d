@@ -4,7 +4,8 @@ module Player;
     enum Color
     {
         WHITE,
-        BLACK
+        BLACK,
+        EMPTY
     }
 
 /* Represents a Player */

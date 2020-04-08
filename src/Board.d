@@ -4,6 +4,7 @@ import std.stdio;
 import std.conv;
 import std.string : split;
 import Piece;
+import Player : Color;
 
 class Board {
 	private Piece[8][8] board;
@@ -17,15 +18,15 @@ class Board {
 		this.curr_player = 0;
 		for (i = 0; i < 8; i++) {
 			for (j = 0; j < 8; j++) {
-				this.board[i][j] = new Piece('.', 2);
+				this.board[i][j] = new Piece('.', Color.EMPTY);
 			}
 		}
 
 		for (i = 0; i < 8; i++) {
-			this.board[1][i] = new Piece('p', 1);//bpawn
-			this.board[6][i] = new Piece('p', 0);//wpawn
-			this.board[0][i] = new Piece(ps[i], 1);//set black piece;
-			this.board[7][i] = new Piece(ps[i], 0);// set white piece;
+			this.board[1][i] = new Piece('p', Color.BLACK);//bpawn
+			this.board[6][i] = new Piece('p', Color.WHITE);//wpawn
+			this.board[0][i] = new Piece(ps[i], Color.BLACK);//set black piece;
+			this.board[7][i] = new Piece(ps[i], Color.WHITE);// set white piece;
 		}
 	}
 
@@ -79,7 +80,7 @@ class Board {
 		if (flag) {
 			this.curr_player = get_opp();
 			board[move[3]][move[2]] = board[move[1]][move[0]];
-			board[move[1]][move[0]] = new Piece('.', 2);
+			board[move[1]][move[0]] = new Piece('.', Color.EMPTY);
 			return true;
 		} else {
 			return false;
