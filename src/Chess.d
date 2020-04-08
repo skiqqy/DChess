@@ -47,12 +47,6 @@ void playGame(Player[] players)
 
 void switchPlayer(ref Player currentPlayer, Player[] players)
 {
-	if(currentPlayer == players[0])
-	{
-		currentPlayer = players[1];
-	}
-	else
-	{
-		currentPlayer = players[0];
-	}
+	/* Alternate players */
+	currentPlayer == players[0] ? currentPlayer = players[1] : currentPlayer = players[0];
 }
