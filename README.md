@@ -1,13 +1,18 @@
-# DChess
+DChess
+======
+
 Chess written in D
 
-To Complile:
+To compile:
+
 ````
 make clean all
 ````
 
-To run
+To run:
+
 ````
+export LD_LIBRARY_PATH="$(pwd)"
 ./Chess
 ````
 
