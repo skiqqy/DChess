@@ -1,2 +1,2 @@
-# DLangChess
-Chess game written in D
+# Dhess
+Chess written in D
