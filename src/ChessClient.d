@@ -2,6 +2,7 @@ module ChessClient;
 
 import std.stdio;
 import std.conv : to;
+import std.socket;
 
 void main()
 {
@@ -16,4 +17,7 @@ void main()
     ushort portNumber = to!(ushort)(port);
 
     writeln("using address "~address~" and port "~port);
+
+    Socket socket = new Socket(AddressFamily.INET, SocketType.STREAM, ProtocolType.TCP);
+    socket.connect(parseAddress(address, portNumber));
 }
