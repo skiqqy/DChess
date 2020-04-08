@@ -12,6 +12,14 @@ class Piece {
 		this.color = color;
 	}
 
+	char getP() {
+		return this.piece;
+	}
+
+	int getPC() {
+		return this.color;
+	}
+
 	int check_move(int[] move) {
 		int flag = 1;
 		

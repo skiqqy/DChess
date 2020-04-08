@@ -88,6 +88,12 @@ class Board {
 	}
 
 	int legal_move(int[] move) {
+		if (move[0] > 7 || move[0] < 0 || move[1] > 7 || move[1] < 0 ||
+			move[2] > 7 || move[2] < 0 || move[3] > 7 || move[3] < 0) {
+			return 0;//move is out  of  bounds
+		} else if (board[move[1]][move[0]].getP == '.') {
+			return 0;//move is selecting an empy block
+		}
 		return board[move[1]][move[0]].check_move(move);
 	}
 
